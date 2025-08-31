@@ -1,0 +1,48 @@
+At a ticket counter, there are n people standing in a queue. Each person requires a certain amount of time to buy their ticket. The counter serves at most k minutes per person per turn:
+
+If a person’s remaining time is less than or equal to k, they finish buying their ticket and leave the queue.
+If a person’s remaining time is greater than k, they spend k minutes and move to the back of the queue with their remaining time reduced by k.
+This process continues until all people finish buying tickets. Your task is to return the order in which people finish buying tickets.
+
+Input Format
+
+First line: An integer n, the number of people in the queue.
+Second line: n space-separated integers, representing the amount of time each person needs.
+Third line: An integer k, the patience limit (maximum time the counter serves per turn).
+Constraints
+
+1 ≤ n ≤ 10^5
+1 ≤ times[i] ≤ 10^9
+1 ≤ k ≤ 10^9
+Output Format
+
+Return a list/array of integers representing the 0-based indices of people in the order they finish buying tickets.
+
+Sample Input 0
+
+4
+5 1 3 7
+3
+Sample Output 0
+
+1 2 0 3
+Explanation 0
+
+Person 0 needs 5 minutes > k=3. They get 3 minutes and go to the back of the queue.
+Person 1 needs 1 minute ≤ k. They finish immediately and leave the queue.
+Person 2 needs 3 minutes = k. They finish immediately and leave the queue.
+Person 3 needs 7 minutes > k. They get 3 minutes and go to the back of the queue.
+Person 0 (remaining 2) gets 2 minutes, finishes.
+Person 3 (remaining 4) gets 3 minutes, goes to the back.
+Person 3 (remaining 1) gets 1 minute, finishes.
+Sample Input 1
+
+5
+1 2 3 4 5
+5
+Sample Output 1
+
+0 1 2 3 4
+Explanation 1
+
+All finish in first turn, no rotation needed
